@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Setup asdf
+        uses: asdf-vm/actions/setup@v1
       - name: Cache asdf
         uses: actions/cache@v3
         with:
@@ -20,8 +22,6 @@ jobs:
             ${{ runner.os }}-asdf-
       - name: Install tools by asdf
         uses: asdf-vm/actions/install@v1
-        with:
-          before_install: echo 'legacy_version_file = yes' >> ~/.asdfrc
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
