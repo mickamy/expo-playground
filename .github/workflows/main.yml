@@ -22,6 +22,8 @@ jobs:
             ${{ runner.os }}-asdf-
       - name: Install tools by asdf
         uses: asdf-vm/actions/install@v1
+        with:
+          before_install: echo "yarn 1.22.19" >> .tool-versions
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
