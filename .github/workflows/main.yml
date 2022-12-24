@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-#      - name: Setup asdf
-#        uses: asdf-vm/actions/setup@v1
+      - name: Setup asdf
+        uses: asdf-vm/actions/setup@v1
       - name: Cache asdf
         uses: actions/cache@v3
         with:
@@ -38,6 +38,4 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn test
       - run: yarn lint
-      - run: javac --version
-      - run: ruby --version
-      - run: node --version
+      - run: yarn eas update
