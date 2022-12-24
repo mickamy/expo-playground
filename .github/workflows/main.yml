@@ -38,7 +38,7 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn test
       - run: yarn lint
-      - run: asdf global yarn 1.22.19
+      - run: cp ./.tool-versions $HOME
       - name: Setup Expo and EAS
         uses: expo/expo-github-action@v7
         with:
