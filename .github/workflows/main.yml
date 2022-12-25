@@ -42,7 +42,8 @@ jobs:
       - name: Setup Expo and EAS
         uses: expo/expo-github-action@v7
         with:
-          expo-version: 5.x
-          eas-version: latest
+          packager: yarn
+          expo-cache: false
+          eas-cache: false
           token: ${{ secrets.EXPO_TOKEN }}
-      - run: eas update
+      - run: yarn eas update --branch main
